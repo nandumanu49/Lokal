@@ -1,15 +1,16 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, Text } from 'react-native';
 
-const JobDetailsScreen = () => {
-    return (
-        <view>
-            <Text>{Job.title}</Text>
-            <Text>{Job.description}</Text>
-        </view>
-    );
-}
+const JobDetailsScreen = ({ route }) => {
+  const { job } = route.params;
 
-const styles = StyleSheet.create({})
+  return (
+    <View style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 24, marginBottom: 10 }}>{job.title}</Text>
+      <Text>{job.description}</Text>
+    </View>
+  );
+};
 
 export default JobDetailsScreen;
+
